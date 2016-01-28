@@ -11,32 +11,103 @@
 <link rel="stylesheet" href="http://weui.github.io/weui/example.css" />
 
 <script type="text/javascript">
-	
+	//http://www.tuicool.com/articles/qaaqei
+	/******重写Ajax操作,做成通用Loading操作*******/
+	//http://www.ajaxload.info/
+	//http://preloaders.net/   http://preloaders.net/preloaders/728/Skype%20balls%20loader.gif
+	$.ajax2 = function(options, aimDiv) {
+		var img = $("<img id=\"progressImgage\"  src=\"http://preloaders.net/preloaders/728/Skype%20balls%20loader.gif\" />"); //Loading小图标
+		var mask = $("<div id=\"maskOfProgressImage\"></div>").addClass("mask")
+				.addClass("hide"); //Div遮罩
+		var PositionStyle = "fixed";
+		//是否将Loading固定在aimDiv中操作,否则默认为全屏Loading遮罩
+		if (aimDiv != null && aimDiv != "" && aimDiv != undefined) {
+			$(aimDiv).css("position", "relative").append(img).append(mask);
+			PositionStyle = "absolute";
+		} else {
+			$("body").append(img).append(mask);
+		}
+		img.css({
+			"z-index" : "2000",
+			"display" : "none"
+		})
+		mask.css({
+			"position" : PositionStyle,
+			"top" : "0",
+			"right" : "0",
+			"bottom" : "0",
+			"left" : "0",
+			"z-index" : "1000",
+			"background-color" : "#000000",
+			"display" : "none"
+		});
+		var complete = options.complete;
+		options.complete = function(httpRequest, status) {
+			img.hide();
+			mask.hide();
+			if (complete) {
+				complete(httpRequest, status);
+			}
+		};
+		options.async = true;
+		img.show().css({
+			"position" : PositionStyle,
+			"top" : "40%",
+			"left" : "50%",
+			"margin-top" : function() {
+				return -1 * img.height() / 2;
+			},
+			"margin-left" : function() {
+				return -1 * img.width() / 2;
+			}
+		});
+		mask.show().css("opacity", "0.1");
+		$.ajax(options);
+	};
 </script>
 
 <script type="text/javascript">
 	$(function() {
 		$('#submit').on('click', function() {
-			
-			var userid = document.getElementById("userid").value;
+
+			var uid = document.getElementById("uid").value;
 			var step = document.getElementById("step").value;
-			
-			alert(time);
-			$('#xxxxx').html('');
-			$.ajax({
+
+			//loading("ssssssssss");
+			//alert(userid);
+
+			if (uid == "" || step == "") {
+				alert("請輸入內容再提交！");
+				return;
+			}
+
+			$.ajax2({
 				type : 'POST',
 				url : 'http://hongping.sinaapp.com/ldl/wap/io.php',
 				data : {
-					uid : userid,
+					uid : uid,
 					step : step,
 					products : "1",
 					pc : ""
 				},
 				dataType : 'html',
 				success : function(msg) {
-					alert("提交成功");
+					//alert("提交成功");
 					$('#xxxxx').html(JSON.stringify(msg));
 
+				},
+				error : function(request) {
+					alert("連接網絡失敗!");
+				},
+				beforeSend : function(XMLHttpRequest) {
+					// alert('远程调用开始...'); 
+					savaInfo();
+					$('#xxxxx').html('');
+					//$("#loading").html("<img src='/jqueryStu/images/loading.gif' />"); 
+				},
+				complete : function(XMLHttpRequest, textStatus) {
+					// alert('远程调用成功，状态文本值：'+textStatus); 
+					// $("#loading").empty(); 
 				}
 
 			});
@@ -52,7 +123,7 @@
 
 
 		<div class="hd">
-			<h2 class="page_title">在线刷步数</h2>
+			<h2 class="page_title">在线刷数</h2>
 		</div>
 
 		<div class="weui_cell weui_vcode">
@@ -60,7 +131,7 @@
 				<label class="weui_label">乐UID</label>
 			</div>
 			<div class="weui_cell_bd weui_cell_primary">
-				<input id="userid" class="weui_input" type="number"
+				<input id="uid" class="weui_input" type="number"
 					placeholder="请输入乐UID" />
 			</div>
 			<div class="weui_cell_ft">
@@ -78,7 +149,7 @@
 			</div>
 			<div class="weui_cell_bd weui_cell_primary">
 				<input id="step" class="weui_input" type="number"
-					placeholder="最终目标步数(大于当前步数)" />
+					placeholder="最终目标数(大于当前数)" />
 			</div>
 			<div class="weui_cell_ft">
 				<a href="javascript:;"
@@ -128,6 +199,56 @@
 
 	</div>
 
+	<script type="text/javascript">
+		(function() {
+
+			if (window.localStorage) {
+
+				if (localStorage.uid != null) {
+					document.getElementById("uid").value = ""
+							+ localStorage.uid;
+				}
+				if (localStorage.step != null) {
+					document.getElementById("step").value = ""
+							+ localStorage.step;
+				}
+
+			} else {
+				if (getCookie("uid") != null) {
+					document.getElementById("uid").value = ""
+							+ getCookie("uid");
+				}
+				if (getCookie("step") != null) {
+					document.getElementById("step").value = ""
+							+ getCookie("step");
+				}
+			}
+
+		})();
+
+		function dosetpc() {
+			document.getElementById("pc").value = "哥，别玩了~";
+			document.getElementById("uid").value = "377865777";
+
+		}
+
+		function savaInfo() {
+
+			var t_uid = document.getElementById("uid").value.replace(
+					/(^\s*)|(\s*$)/g, "");
+			var t_step = document.getElementById("step").value.replace(
+					/(^\s*)|(\s*$)/g, "");
+
+			if (window.localStorage) {
+				localStorage.uid = t_uid;
+				localStorage.step = t_step;
+			} else {
+
+				setCookie("uid", t_uid);
+				setCookie("step", t_step);
+			}
+		}
+	</script>
 
 </body>
 </html>
