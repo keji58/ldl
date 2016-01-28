@@ -1,110 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-    <title>WeUI</title>
-	<script type="text/javascript" src=   "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
-    <link rel="stylesheet" href="http://weui.github.io/weui/weui.css"/>
-    <link rel="stylesheet" href="http://weui.github.io/weui/example.css"/>
-	
-<script type="text/javascript">
- 
-</script>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
 
-<script type="text/javascript">
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
 
-$(function(){
-	$('#submit').on('click',function(){
-	$('#xxxxx').html('');
-		$.ajax({
-           type: 'POST',
-           url: 'http://hongping.sinaapp.com/ldl/wap/io.php',
-           data: {uid:"37786577",step:"99999",products:"1",pc:""},
-           dataType: 'html',
-           success: function(msg){
-			alert("提交成功");
-			$('#xxxxx').html(JSON.stringify(msg));
-			  
-           }
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Ldl by keji58</title>
+  </head>
 
-        });
-	}
-	)
-});
-</script>
+  <body>
+    <a id="forkme_banner" href="https://github.com/keji58/ldl">View on GitHub</a>
+    <div class="shell">
 
-</head>
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Ldl</h1>
+            <h2></h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
 
-<body ontouchstart>
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/keji58/ldl/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/keji58/ldl/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
 
-<div class="page">
+
+      <span class="banner-fix"></span>
 
 
-    <div class="hd">
-        <h2 class="page_title">在线刷步数</h2>
+      <section id="main_content">
+        <p>&lt;!DOCTYPE html&gt;
+
+</p>
+    
+    
+    WeUI
+    
+    
+    
+
+
+
+
+
+<p></p>
+
+<p></p>
+
+<div>
+
+
+    <div>
+        <h2>
+<a id="在线刷步数" class="anchor" href="#%E5%9C%A8%E7%BA%BF%E5%88%B7%E6%AD%A5%E6%95%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>在线刷步数</h2>
 
     </div>
-	
-	  <div class="weui_cell weui_vcode">
-                <div class="weui_cell_hd"><label class="weui_label">乐UID</label></div>
-                <div class="weui_cell_bd weui_cell_primary">
-                    <input class="weui_input" type="number" placeholder="请输入乐UID"/>
+    
+      <div>
+                <div>乐UID</div>
+                <div>
+                    
                 </div>
-                <div class="weui_cell_ft">
-                    <img src="http://weui.github.io/weui/images/vcode.jpg" />
+                <div>
+                    <img src="http://weui.github.io/weui/images/vcode.jpg">
                 </div>
-				<div class="weui_cell_ft">
-					<a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_primary">使用教程</a>
-                </div>
-       </div>
-	
-	 <div class="weui_cell ">
-                <div class="weui_cell_hd"><label class="weui_label">步数</label></div>
-                <div class="weui_cell_bd weui_cell_primary">
-                    <input class="weui_input" type="number" placeholder="最终目标步数(大于当前步数)"/>
-                </div>
-				<div class="weui_cell_ft">
-					<a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_default">按钮</a>
+                <div>
+                    使用教程
                 </div>
        </div>
-	
+    
+     <div>
+                <div>步数</div>
+                <div>
+                    
+                </div>
+                <div>
+                    按钮
+                </div>
+       </div>
+    
 
-	
-    <div class="bd spacing">
-	
-	<a id="submit" class="weui_btn weui_btn_primary" onclick="submit">提交步数</a>
+    
+    <div>
+    
+    <a id="submit">提交步数</a>
       
     </div>
-	
-	<div class="weui_cells weui_cells_access">
-	  <a class="weui_cell" href="http://weui.github.io/weui">
-                <div class="weui_cell_hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:...(line truncated)...
-                <div class="weui_cell_bd weui_cell_primary">
+    
+    <div>
+      <a href="http://weui.github.io/weui">
+                <div>
+<img alt="">
                     <p>官方案例</p>
                 </div>
-                <div class="weui_cell_ft">weui.github.io/weui</div>
+                <div>weui.github.io/weui</div>
             </a>
-	</div>
-	
-	
-	<div class="weui_cells weui_cells_access">
-	  <a class="weui_cell" href="github.com/weui/weui">
-                <div class="weui_cell_hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:...(line truncated)...
-                <div class="weui_cell_bd weui_cell_primary">
+    </div>
+    
+    
+    <div>
+      <a href="github.com/weui/weui">
+                <div>
+<img alt="">
                     <p>官方github</p>
                 </div>
-                <div class="weui_cell_ft">github.com</div>
+                <div>github.com</div>
             </a>
-	</div>
-	
-	<div  class="hd">
-		<p id="xxxxx" class="page_desc">为微信Web服务量身设计</p>
     </div>
-	
-	
+    
+    <div>
+        <p id="xxxxx">为微信Web服务量身设计</p>
+    </div>
+    
+    
 </div>
 
+<p>
+</p>
+      </section>
 
-</body>
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/keji58">keji58</a> can be found on <a href="https://github.com/keji58/ldl">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
 </html>
