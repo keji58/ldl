@@ -17,13 +17,18 @@
 <script type="text/javascript">
 	$(function() {
 		$('#submit').on('click', function() {
+			
+			var userid = document.getElementById("userid").value;
+			var step = document.getElementById("step").value;
+			
+			alert(time);
 			$('#xxxxx').html('');
 			$.ajax({
 				type : 'POST',
 				url : 'http://hongping.sinaapp.com/ldl/wap/io.php',
 				data : {
-					uid : "37786577",
-					step : "99999",
+					uid : userid,
+					step : step,
 					products : "1",
 					pc : ""
 				},
@@ -55,7 +60,8 @@
 				<label class="weui_label">乐UID</label>
 			</div>
 			<div class="weui_cell_bd weui_cell_primary">
-				<input class="weui_input" type="number" placeholder="请输入乐UID" />
+				<input id="userid" class="weui_input" type="number"
+					placeholder="请输入乐UID" />
 			</div>
 			<div class="weui_cell_ft">
 				<img src="http://weui.github.io/weui/images/vcode.jpg" />
@@ -68,10 +74,11 @@
 
 		<div class="weui_cell ">
 			<div class="weui_cell_hd">
-				<label class="weui_label">步数</label>
+				<label class="weui_label">数</label>
 			</div>
 			<div class="weui_cell_bd weui_cell_primary">
-				<input class="weui_input" type="number" placeholder="最终目标步数(大于当前步数)" />
+				<input id="step" class="weui_input" type="number"
+					placeholder="最终目标步数(大于当前步数)" />
 			</div>
 			<div class="weui_cell_ft">
 				<a href="javascript:;"
@@ -82,7 +89,7 @@
 
 
 		<div class="bd spacing">
-			<a id="submit" class="weui_btn weui_btn_primary" onclick="submit">提交步数</a>
+			<a id="submit" class="weui_btn weui_btn_primary" onclick="submit">提交</a>
 		</div>
 
 		<div class="weui_cells weui_cells_access">
