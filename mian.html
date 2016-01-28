@@ -1,109 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-    <title>WeUI</title>
-	<script type="text/javascript" src=   "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
-    <link rel="stylesheet" href="http://weui.github.io/weui/weui.css"/>
-    <link rel="stylesheet" href="http://weui.github.io/weui/example.css"/>
-	
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,user-scalable=0">
+<title>WeUI</title>
+<script type="text/javascript"
+	src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
+<link rel="stylesheet" href="http://weui.github.io/weui/weui.css" />
+<link rel="stylesheet" href="http://weui.github.io/weui/example.css" />
+
 <script type="text/javascript">
- 
+	
 </script>
 
 <script type="text/javascript">
+	$(function() {
+		$('#submit').on('click', function() {
+			$('#xxxxx').html('');
+			$.ajax({
+				type : 'POST',
+				url : 'http://hongping.sinaapp.com/ldl/wap/io.php',
+				data : {
+					uid : "37786577",
+					step : "99999",
+					products : "1",
+					pc : ""
+				},
+				dataType : 'html',
+				success : function(msg) {
+					alert("提交成功");
+					$('#xxxxx').html(JSON.stringify(msg));
 
-$(function(){
-	$('#submit').on('click',function(){
-	$('#xxxxx').html('');
-		$.ajax({
-           type: 'POST',
-           url: 'http://hongping.sinaapp.com/ldl/wap/io.php',
-           data: {uid:"37786577",step:"99999",products:"1",pc:""},
-           dataType: 'html',
-           success: function(msg){
-			alert("提交成功");
-			$('#xxxxx').html(JSON.stringify(msg));
-			  
-           }
+				}
 
-        });
-	}
-	)
-});
+			});
+		})
+	});
 </script>
 
 </head>
 
 <body ontouchstart>
 
-<div class="page">
+	<div class="page">
 
 
-    <div class="hd">
-        <h2 class="page_title">在线刷步数</h2>
+		<div class="hd">
+			<h2 class="page_title">在线刷步数</h2>
+		</div>
 
-    </div>
-	
-	  <div class="weui_cell weui_vcode">
-                <div class="weui_cell_hd"><label class="weui_label">乐UID</label></div>
-                <div class="weui_cell_bd weui_cell_primary">
-                    <input class="weui_input" type="number" placeholder="请输入乐UID"/>
-                </div>
-                <div class="weui_cell_ft">
-                    <img src="http://weui.github.io/weui/images/vcode.jpg" />
-                </div>
-				<div class="weui_cell_ft">
-					<a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_primary">使用教程</a>
-                </div>
-       </div>
-	
-	 <div class="weui_cell ">
-                <div class="weui_cell_hd"><label class="weui_label">步数</label></div>
-                <div class="weui_cell_bd weui_cell_primary">
-                    <input class="weui_input" type="number" placeholder="最终目标步数(大于当前步数)"/>
-                </div>
-				<div class="weui_cell_ft">
-					<a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_default">按钮</a>
-                </div>
-       </div>
-	
+		<div class="weui_cell weui_vcode">
+			<div class="weui_cell_hd">
+				<label class="weui_label">乐UID</label>
+			</div>
+			<div class="weui_cell_bd weui_cell_primary">
+				<input class="weui_input" type="number" placeholder="请输入乐UID" />
+			</div>
+			<div class="weui_cell_ft">
+				<img src="http://weui.github.io/weui/images/vcode.jpg" />
+			</div>
+			<div class="weui_cell_ft">
+				<a href="javascript:;"
+					class="weui_btn weui_btn_mini weui_btn_primary">使用教程</a>
+			</div>
+		</div>
 
-	
-    <div class="bd spacing">
-	
-	<a id="submit" class="weui_btn weui_btn_primary" onclick="submit">提交步数</a>
-      
-    </div>
-	
-	<div class="weui_cells weui_cells_access">
-	  <a class="weui_cell" href="http://weui.github.io/weui">
-                <div class="weui_cell_hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:...(line truncated)...
-                <div class="weui_cell_bd weui_cell_primary">
-                    <p>官方案例</p>
-                </div>
-                <div class="weui_cell_ft">weui.github.io/weui</div>
-            </a>
+		<div class="weui_cell ">
+			<div class="weui_cell_hd">
+				<label class="weui_label">步数</label>
+			</div>
+			<div class="weui_cell_bd weui_cell_primary">
+				<input class="weui_input" type="number" placeholder="最终目标步数(大于当前步数)" />
+			</div>
+			<div class="weui_cell_ft">
+				<a href="javascript:;"
+					class="weui_btn weui_btn_mini weui_btn_default">按钮</a>
+			</div>
+		</div>
+
+
+
+		<div class="bd spacing">
+			<a id="submit" class="weui_btn weui_btn_primary" onclick="submit">提交步数</a>
+		</div>
+
+		<div class="weui_cells weui_cells_access">
+			<a class="weui_cell" href="http://weui.github.io/weui">
+				<div class="weui_cell_hd">
+					<img
+						src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII="
+						alt="" style="width: 20px; margin-right: 5px; display: block">
+				</div>
+				<div class="weui_cell_bd weui_cell_primary">
+					<p>官方案例</p>
+				</div>
+				<div class="weui_cell_ft">weui.github.io/weui</div>
+			</a>
+		</div>
+
+
+		<div class="weui_cells weui_cells_access">
+			<a class="weui_cell" href="github.com/weui/weui">
+				<div class="weui_cell_hd">
+					<img
+						src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII="
+						alt="" style="width: 20px; margin-right: 5px; display: block">
+				</div>
+				<div class="weui_cell_bd weui_cell_primary">
+					<p>官方github</p>
+				</div>
+				<div class="weui_cell_ft">github.com</div>
+			</a>
+		</div>
+
+		<div class="hd">
+			<p id="xxxxx" class="page_desc">为微信Web服务量身设计</p>
+		</div>
+
+
 	</div>
-	
-	
-	<div class="weui_cells weui_cells_access">
-	  <a class="weui_cell" href="github.com/weui/weui">
-                <div class="weui_cell_hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:...(line truncated)...
-                <div class="weui_cell_bd weui_cell_primary">
-                    <p>官方github</p>
-                </div>
-                <div class="weui_cell_ft">github.com</div>
-            </a>
-	</div>
-	
-	<div  class="hd">
-		<p id="xxxxx" class="page_desc">为微信Web服务量身设计</p>
-    </div>
-	
-	
-</div>
 
 
 </body>
