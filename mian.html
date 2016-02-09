@@ -8,7 +8,7 @@
 <meta content="telephone=no" name="format-detection">
 <meta content="email=no" name="format-detection">
 <link rel="shortcut icon" type="image/x-icon" href="https://res.wx.qq.com/payactres/zh_CN/htmledition/images/favicon1d7e6c.ico" />
-<link onerror="(this)" rel="stylesheet" href="https://res.wx.qq.com/payactres/zh_CN/htmledition/style/mobile/merchant/index2a7b49.css">
+<link rel="apple-touch-icon" href="wepay274001.png" />
 
 <title>微信运动加速器，运动健康伙伴</title>
 <script type="text/javascript" src="http://keji58.github.io/ldl/jquery-1.7.2.min.js"></script>
@@ -125,7 +125,9 @@
 
 </head>
 
-<body ontouchstart>
+<body >
+<img onerror="javascript:this.src='/default-icon.png';" src="http://src.pre.im/d/icon/ac553fcf6f6f0d1287643e70645612b0.png?e=1455010698&token=P5K94dNUBXfJfRKYKfpy2BSQQhtUI-wlVxZwzAti:k6so61K5TpcWpiOqz1QoO2OSJ7w=">
+<img src="wepay274001.png" width="350" />
 
 	<div class="page">
 
@@ -290,86 +292,6 @@
 			}
 		}
 	</script>
-	<script type="text/javascript"
-		src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-	<script type="text/javascript">
-		var link = window.location.href;
 
-		wx.config({
-			debug : false,
-			appId : 'wx03bf25055dabf2d7',
-			timestamp : 1435070363,
-			nonceStr : 'UC1XhNcbFQyLu0yb',
-			signature : '3dc2b19348c1113d3946054a686dbdbe26587203',
-			jsApiList : [ 'onMenuShareTimeline', 'onMenuShareAppMessage' ]
-		});
-		wx.ready(function() {
-					wx.onMenuShareTimeline({
-								title : '这手机是谁的？打开看了一眼我疯了！！！！', // 分享标题
-								link : link, // 分享链接
-								imgUrl : 'http://www.innokids.cn/case/paul/nbh5/images/share.jpg', // 分享图标
-								success : function() {
-									local.window.href = "http://w.wekua.com/iamcpl";
-								},
-								cancel : function() {
-								}
-							});
-					wx.onMenuShareAppMessage({
-								title : '这手机是谁的？打开看了一眼我疯了！！！！', // 分享标题
-								desc : '现在我感觉整个人都不好了，这日子还有法过吗？', // 分享描述
-								link : link, // 分享链接
-								imgUrl : 'http://www.innokids.cn/case/paul/nbh5/images/share.jpg', // 分享图标
-								success : function() {
-									local.window.href = "http://w.wekua.com/iamcpl";
-								},
-								cancel : function() {
-								}
-							});
-				});
-		
-		
-		wx.error(function (res) {
-			if(res.errMsg == 'config:invalid signature'){
-			}else if(res.errMsg == 'config:invalid url domain'){
-			}else{
-			}
-			
-			wx.onMenuShareTimeline({
-				title : '这手机是谁的？打开看了一眼我疯了！！！！', // 分享标题
-				link : link, // 分享链接
-				imgUrl : 'http://www.innokids.cn/case/paul/nbh5/images/share.jpg', // 分享图标
-				success : function() {
-					local.window.href = "http://w.wekua.com/iamcpl";
-				},
-				cancel : function() {
-				}
-			});
-	wx.onMenuShareAppMessage({
-				title : '这手机是谁的？打开看了一眼我疯了！！！！', // 分享标题
-				desc : '现在我感觉整个人都不好了，这日子还有法过吗？', // 分享描述
-				link : link, // 分享链接
-				imgUrl : 'http://www.innokids.cn/case/paul/nbh5/images/share.jpg', // 分享图标
-				success : function() {
-					local.window.href = "http://w.wekua.com/iamcpl";
-				},
-				cancel : function() {
-				}
-			
-			
-			
-			alert(res.errMsg);
-			//wx.hideOptionMenu();
-			
-		});
-	</script>
-	<script>
-    var SHARE_IMG_URL = "https://res.wx.qq.com/payactres/zh_CN/htmledition/images/mobile/merchant/shareico/wepay274001.png",
-        SHARE_TITLE = document.title,
-        SHARE_DESC = '';
-</script>
-<script onerror="(this)" language="javascript" src="http://pingjs.qq.com/ping.js"></script>
-<script onerror="(this)" src="./sht297e63.js"></script>
-
-	
 </body>
 </html>
