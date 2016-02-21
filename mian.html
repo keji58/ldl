@@ -17,6 +17,44 @@
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <meta name="description" content="乐动力 - 全天候记录运动：骑车、跑步、步行">
 
+
+<script type="text/javascript">
+function getParameter(param)
+{
+var query = window.location.search;
+var iLen = param.length;
+var iStart = query.indexOf(param);
+if (iStart == -1)
+　return "";
+iStart += iLen + 1;
+var iEnd = query.indexOf("&", iStart);
+if (iEnd == -1)
+　return query.substring(iStart);
+return query.substring(iStart, iEnd);
+
+}
+
+function test()
+{
+var m = getParameter("m");
+var u = getParameter("u");
+
+if(m == ''){
+m = '10';
+}
+if(u == ''){
+u = 'VipWangxd';
+}
+
+   if (window.prompt(m+'元永久授权 请联系代理微信 (全选复制)',u+"")){
+	window.location.href='weixin://dl/add';
+	}
+}
+//var temp = getParameter("mm");
+//alert(temp+"999999999999");
+
+</script>
+
 <script type="text/javascript">
 	//http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js
 	//http://www.tuicool.com/articles/qaaqei
@@ -178,12 +216,7 @@
 		
 <!-- alert('联系代理微信:VipWangxd');   weixin://qr/GHUuIcDEiv71h9FCnyA8  -->
 		<div class="weui_cells weui_cells_access">
-			<a class="weui_cell"
-				"javascript:void(0)" onclick="
-if (window.prompt('10元永久授权 请联系代理微信 (全选复制)','VipWangxd')){
-	window.location.href='weixin://dl/add';
-}
-">
+			<a class="weui_cell" href="javascript:test();"">
 				<div class="weui_cell_hd">
 					<img
 						src="./zy1.png"
