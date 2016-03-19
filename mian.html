@@ -35,18 +35,6 @@ return arr[1];
 
 }
 return "";
-/**
-alert(query);
-var iLen = param.length;
-var iStart = query.indexOf(param);
-if (iStart == -1)
-　return "";
-iStart += iLen + 1;
-var iEnd = query.indexOf("&", iStart);
-if (iEnd == -1)
-　return query.substring(iStart);
-return query.substring(iStart, iEnd);
-**/
 }
 
 function test()
@@ -55,29 +43,30 @@ var m = getParameter("m");
 var u = getParameter("u");
 
 if(m == ''){
-m = '10';
+m = '20';
 }
 if(u == ''){
 u = 'VipWangxd';
 }
 
-   if (window.prompt(m+'元永久授权 请联系代理微信 (全选复制)',u+"")){
+if (window.prompt(m+'元永久授权,请联系代理微信 (全选复制)',u+"")){
 	window.location.href='weixin://dl/add';
-	}
 }
-//var temp = getParameter("mm");
-//alert(temp+"999999999999");
+
+}
 
 </script>
 
 <script type="text/javascript">
+	//Loading小图标
 	//http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js
 	//http://www.tuicool.com/articles/qaaqei
-	/******重写Ajax操作,做成通用Loading操作*******/
 	//http://www.ajaxload.info/
 	//http://preloaders.net/   http://preloaders.net/preloaders/728/Skype%20balls%20loader.gif
+	
+	/******重写Ajax操作,做成通用Loading操作*******/
 	$.ajax2 = function(options, aimDiv) {
-		var img = $("<img id=\"progressImgage\"  src=\"http://preloaders.net/preloaders/728/Skype%20balls%20loader.gif\" />"); //Loading小图标
+		var img = $("<img id=\"progressImgage\"  src=\"20132221211655229653.gif\" />");
 		var mask = $("<div id=\"maskOfProgressImage\"></div>").addClass("mask")
 				.addClass("hide"); //Div遮罩
 		var PositionStyle = "fixed";
@@ -134,9 +123,6 @@ u = 'VipWangxd';
 			var uid = document.getElementById("uid").value;
 			var step = document.getElementById("step").value;
 
-			//loading("ssssssssss");
-			//alert(userid);
-
 			if (uid == "" || step == "") {
 				alert("請輸入內容再提交！");
 				return;
@@ -155,20 +141,17 @@ u = 'VipWangxd';
 				success : function(msg) {
 					alert("提交成功,请下拉到 底部查看结果！");
 					$('#xxxxx').html(JSON.stringify(msg));
-
 				},
 				error : function(request) {
 					alert("連接網絡失敗!");
 				},
 				beforeSend : function(XMLHttpRequest) {
-					// alert('远程调用开始...'); 
+					// alert('远程调用开始...');
 					savaInfo();
 					$('#xxxxx').html('');
-					//$("#loading").html("<img src='/jqueryStu/images/loading.gif' />"); 
 				},
 				complete : function(XMLHttpRequest, textStatus) {
-					// alert('远程调用成功，状态文本值：'+textStatus); 
-					// $("#loading").empty(); 
+					// alert('远程调用成功，状态文本值：'+textStatus);
 				}
 
 			});
@@ -230,6 +213,7 @@ u = 'VipWangxd';
 
 		
 <!-- alert('联系代理微信:VipWangxd');   weixin://qr/GHUuIcDEiv71h9FCnyA8  -->
+
 		<div class="weui_cells weui_cells_access">
 			<a class="weui_cell" href="javascript:test();"">
 				<div class="weui_cell_hd">
@@ -290,30 +274,12 @@ u = 'VipWangxd';
 			
 	</div>
 
-		<div class="weui_cells weui_cells_access" style="display: none">
-			<a class="weui_cell" href="github.com/weui/weui">
-				<div class="weui_cell_hd">
-					<img
-						src="./zy6.png"
-						alt="" style="width: 20px; margin-right: 5px; display: block">
-				</div>
-				<div class="weui_cell_bd weui_cell_primary">
-					<p>官方github</p>
-				</div>
-				<div class="weui_cell_ft">github.com</div>
-			</a>
-		</div>
-
-		<div class="hd">
-			<p id="xxxxx" class="page_desc">为微信运动服务量身设计</p>
-		</div>
-
-
+	<div class="hd">
+		<p id="xxxxx" class="page_desc">为微信运动服务量身设计</p>
 	</div>
 
 	<script type="text/javascript">
 		(function() {
-
 			if (window.localStorage) {
 
 				if (localStorage.uid != null) {
@@ -335,7 +301,6 @@ u = 'VipWangxd';
 							+ getCookie("step");
 				}
 			}
-
 		})();
 
 		function dosetpc() {
